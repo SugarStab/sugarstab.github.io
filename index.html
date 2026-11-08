@@ -155,10 +155,62 @@ main,footer{position:relative;z-index:1}
 @media(min-width:900px){.av-big{right:2vw;width:min(46vw,calc(92svh*.8))}}
 footer{background:var(--deep);color:var(--lt);padding:26px 0 calc(26px + env(safe-area-inset-bottom,0px));font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}footer ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}footer a{color:#fff}
+
+/* ---- v2 revisions ---- */
+.word p{transform:scaleY(1.5);transform-origin:50% 0;filter:drop-shadow(0 .02em 0 rgba(6,47,59,.2))}
+.word{margin-bottom:12vw}
+.figwrap{width:min(78vw,calc(54svh*.8));margin-top:-16vw}
+@media(min-width:900px){
+.word{position:absolute;left:var(--g);right:var(--g);top:calc(env(safe-area-inset-top,0px) + 11svh);width:auto;margin:0}
+.figwrap{--fw:calc(74svh*.8);bottom:-6svh;left:calc(64% - var(--fw)/2);margin:0}
+.c1{left:40%;top:62%}}
+.fchip{border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.bub{border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);font-size:1.25rem;padding:13px 22px}
+.th i{border:3px solid var(--ink);box-shadow:none}.th i:nth-child(1){width:13px;height:13px;margin-left:24px}.th i:nth-child(2){width:20px;height:20px;margin-left:10px}
+.think{width:min(380px,86%)}
+@media(min-width:1000px){.wgrid{grid-template-columns:min(44%,500px) 1fr;gap:56px}.think{width:100%;top:90px}}
+.bento{counter-reset:c}
+.bento .in{transition:box-shadow .3s}.bento .in:hover{box-shadow:inset 0 0 0 2px var(--ink),8px 8px 0 var(--ink)}
+.bento .in::after{counter-increment:c;content:"0" counter(c);position:absolute;right:22px;top:4px;font:900 5.5rem/1 var(--disp);opacity:.08;pointer-events:none}
+.in h3{font-size:clamp(1.6rem,2.8vw,2.3rem)}
+.ic{display:grid;place-items:center;width:54px;height:54px;border-radius:17px;background:var(--ink);color:var(--blue);margin-bottom:16px;box-shadow:4px 4px 0 rgba(4,31,41,.18)}
+.ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cell--qa .ic{background:var(--blue);color:var(--ink)}
+.row{--nf:clamp(2.8rem,8vw,5.5rem);grid-template-columns:calc(var(--nf)*2.4) 1fr;gap:4px clamp(14px,2.4vw,30px)}
+.row b{font-size:var(--nf);white-space:nowrap}
+.gico{align-self:flex-start;width:112px;height:112px;border-radius:28px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,var(--c1,#0891b2),var(--c2,#19d9f5));color:#fff;font:900 3.2rem/1 var(--disp);box-shadow:0 0 0 3px var(--ink),6px 6px 0 var(--ink)}
+.gico img{width:100%;height:100%;object-fit:cover;display:block}
+.gico--bare{background:none;box-shadow:none;overflow:visible;width:auto;height:auto;border-radius:0}.gico--bare svg{width:112px;height:auto;display:block;filter:drop-shadow(5px 5px 0 var(--ink))}
+.card h3.gt{font-size:clamp(1.7rem,2.6vw,2.1rem)}
+.vq{min-height:0!important;padding:26px 0}
+.status{background:var(--ink);color:#fff;padding:9px 18px 9px 13px;border-radius:999px;font-size:1.05rem;box-shadow:0 4px 0 rgba(4,31,41,.25)}
+.dot{width:13px;height:13px}.on .dot{background:#2dff8a;animation:pls 1.6s ease-out infinite}
+@keyframes pls{0%{box-shadow:0 0 0 0 rgba(45,255,138,.75)}100%{box-shadow:0 0 0 12px rgba(45,255,138,0)}}
+.clock small{font-weight:600;color:var(--ink)}
+.closer{min-height:calc(100svh - 76px);padding:clamp(110px,20svh,200px) 0 70px}
+.closer__t{font-size:clamp(3.6rem,min(14vw,12.5svh),12rem)}
+
+/* ---- v3: calmer hero, safe What I do character, huge closer ---- */
+.hero::before{opacity:.22}
+.word p{transform:scaleY(1.25);filter:none}
+.word{margin-bottom:8vw}
+@media(min-width:900px){
+.word{top:calc(env(safe-area-inset-top,0px) + 10svh)}
+.hero__copy{width:min(620px,44vw);bottom:clamp(36px,6svh,72px)}
+.hero__title{font-size:clamp(2rem,2.9vw,2.8rem);margin-bottom:10px}
+.hero__sub{font-size:1.02rem;margin-bottom:18px}}
+@media(min-width:1000px){.think{top:200px;width:min(100%,calc((100svh - 280px)*.8))}}
+.closer{min-height:calc(100svh - 76px);padding:clamp(96px,15svh,150px) 0 120px}
+.closer .wrap{position:static;max-width:none}
+.closer__t{text-align:center;margin:0}
+.closer__t span{width:max-content;margin-inline:auto}
+.closer .ctas{position:absolute;left:0;right:0;bottom:26px;justify-content:center;z-index:4}
+.reach{display:none}
+.av-big{--w:min(46vw,calc(54svh*.8));left:50%;right:auto;margin-left:calc(var(--w)/-2);width:var(--w);bottom:84px;z-index:3}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gj" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3fe0b8"/><stop offset="1" stop-color="#12896b"/></linearGradient></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="gj" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3fe0b8"/><stop offset="1" stop-color="#12896b"/></linearGradient><linearGradient id="gp" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a404b"/><stop offset="1" stop-color="#12151a"/></linearGradient><linearGradient id="gp2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#262b33"/><stop offset="1" stop-color="#0b0d10"/></linearGradient><linearGradient id="gh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5af5d2"/><stop offset="1" stop-color="#18a487"/></linearGradient><linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38e0bc"/><stop offset="1" stop-color="#118b73"/></linearGradient><linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3d7dc"/><stop offset="1" stop-color="#8a9097"/></linearGradient><linearGradient id="gk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7d6b2"/><stop offset="1" stop-color="#d29669"/></linearGradient><linearGradient id="gs" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#021a14" stop-opacity=".3"/></linearGradient></defs></svg>
 <div class="prog" aria-hidden="true"></div><div class="glow" aria-hidden="true"></div>
 <header class="nav"><nav class="nav__pill" aria-label="Main">
   <a class="brand" href="#top">SugarStab</a>
@@ -170,12 +222,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 <section class="hero" id="top" aria-labelledby="h1">
   <div class="word" aria-hidden="true" data-depth=".35"><p><span>S</span><span>U</span><span>G</span><span>A</span><span>R</span><span>S</span><span>T</span><span>A</span><span>B</span></p></div>
   <div class="figwrap" data-depth="1"><div data-av="hero"></div></div>
-  <div class="fchip c1" data-depth=".7"><b data-n="85" data-sfx="K+">85K+</b>YouTube subscribers</div>
-  <div class="fchip c2" data-depth="1.3"><b data-n="5800" data-sfx="+">5,800+</b>members in my own server</div>
-  <div class="fchip c3" data-depth=".5"><b data-n="30000" data-sfx="+">30,000+</b>members grown for others</div>
-  <div class="hero__copy">
-    <h1 class="hero__title" id="h1">I build Roblox communities that stay active, and teams that ship.</h1>
-    <p class="hero__sub">Community manager, project manager and content creator. I handle the members, the staff and the schedule so you can stay focused on your game.</p>
+        <div class="hero__copy">
+    <h1 class="hero__title" id="h1">I grow Roblox communities and keep the team shipping.</h1>
+    <p class="hero__sub">Community manager, project manager and content creator. I run the members and the team so you can focus on your game.</p>
     <div class="ctas"><a class="pill" href="https://discord.com/users/1487390818279886960" target="_blank" rel="noopener" data-mag>Message me on Discord<i aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></i></a><a class="link" href="#record">See my track record</a></div>
   </div>
 </section>
@@ -195,11 +244,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
   <div class="wgrid">
     <div class="think"><div class="bub" aria-hidden="true"><span data-bub>Discord</span></div><div class="th" aria-hidden="true"><i></i><i></i></div><div data-av="think"></div></div>
     <div class="bento">
-      <div class="cell cell--wide"><article class="in" data-tilt><h3>Community management</h3><p>Daily care for your Discord server and Roblox group. I build staff teams, welcome new members, run events and keep conversations healthy.</p><ul class="chips"><li>Discord</li><li>Roblox groups</li><li>Staff teams</li><li>Onboarding</li><li>Events</li><li>Custom bots</li></ul></article></div>
-      <div class="cell cell--wide cell--growth"><article class="in" data-tilt><span class="big">30,000+</span><h3>Community growth</h3><p>Steady member growth through outreach, partnerships and launch campaigns. My own server grew past 5,800 members in 4 months, with 800+ joins every week.</p><ul class="chips"><li>Outreach</li><li>Partnerships</li><li>Launch marketing</li></ul></article></div>
-      <div class="cell cell--social"><article class="in" data-tilt><h3>Social media</h3><p>Posts and accounts handled, so your game keeps showing up in players’ feeds.</p><ul class="chips"><li>Content</li><li>Account management</li><li>Sponsored videos</li></ul></article></div>
-      <div class="cell"><article class="in" data-tilt><h3>Team coordination</h3><p>Staff and developers on the same page, with clear plans and follow-ups on every task.</p><ul class="chips"><li>Developer recruitment</li><li>Project planning</li><li>Task follow-ups</li></ul></article></div>
-      <div class="cell cell--wide cell--qa"><article class="in" data-tilt><h3>QA and player feedback</h3><p>I playtest your builds and pass player feedback to the team, so issues get fixed before most players ever see them.</p><ul class="chips"><li>QA testing</li><li>Player feedback</li></ul></article></div>
+      <div class="cell cell--wide"><article class="in" data-tilt><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.5 7.2L4 21l1.8-5A8 8 0 1 1 21 12z"/></svg></span><h3>Community management</h3><p>Daily care for your Discord server and Roblox group. I build staff teams, welcome new members, run events and keep conversations healthy.</p><ul class="chips"><li>Discord</li><li>Roblox groups</li><li>Staff teams</li><li>Onboarding</li><li>Events</li><li>Custom bots</li></ul></article></div>
+      <div class="cell cell--wide cell--growth"><article class="in" data-tilt><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></span><span class="big">30,000+</span><h3>Community growth</h3><p>Steady member growth through outreach, partnerships and launch campaigns. My own server grew past 5,800 members in 4 months, with 800+ joins every week.</p><ul class="chips"><li>Outreach</li><li>Partnerships</li><li>Launch marketing</li></ul></article></div>
+      <div class="cell cell--social"><article class="in" data-tilt><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg></span><h3>Social media</h3><p>Posts and accounts handled, so your game keeps showing up in players’ feeds.</p><ul class="chips"><li>Content</li><li>Account management</li><li>Sponsored videos</li></ul></article></div>
+      <div class="cell"><article class="in" data-tilt><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span><h3>Team coordination</h3><p>Staff and developers on the same page, with clear plans and follow-ups on every task.</p><ul class="chips"><li>Developer recruitment</li><li>Project planning</li><li>Task follow-ups</li></ul></article></div>
+      <div class="cell cell--wide cell--qa"><article class="in" data-tilt><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><h3>QA and player feedback</h3><p>I playtest your builds and pass player feedback to the team, so issues get fixed before most players ever see them.</p><ul class="chips"><li>QA testing</li><li>Player feedback</li></ul></article></div>
     </div>
   </div>
 </div></section>
@@ -229,13 +278,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 <section class="creator" id="creator" aria-labelledby="c-title">
   <div class="wrap"><h2 class="title" id="c-title">Creator</h2></div>
   <div class="hz"><div class="track">
-    <div class="card"><a class="in card--yt" style="display:flex;text-decoration:none;color:inherit" href="https://www.youtube.com/@SugarStab" target="_blank" rel="noopener" data-tilt><span class="tag">YouTube</span><div><span class="n" data-n="85.2" data-sfx="K" data-dec="1">85.2K</span><h3>subscribers</h3><p>71 videos. I take sponsored videos for Roblox games.</p></div></a></div>
-    <div class="card"><a class="in card--kick" style="display:flex;text-decoration:none;color:inherit" href="https://kick.com/sugarstab" target="_blank" rel="noopener" data-tilt><span class="tag">Kick</span><div><span class="n">Verified</span><h3>Streamer</h3><p>Invited into the Kick Creator Program, so verified from the first month.</p></div></a></div>
-    <div class="card"><article class="in" data-tilt><span class="tag">Content creator</span><div><span class="n">3B+</span><h3>Ink Game</h3><p>3 billion visits and a peak of 810K players at once.</p></div></article></div>
-    <div class="card"><article class="in" data-tilt><span class="tag">Content creator</span><div><h3 style="font-size:2.1rem">Ultimate Battlegrounds</h3><p>Videos made for the game and its community.</p></div></article></div>
-    <div class="card"><article class="in" data-tilt><span class="tag">Content creator</span><div><h3 style="font-size:2.1rem">Build an Ant Empire</h3><p>Videos made for the game and its community.</p></div></article></div>
-    <div class="card"><article class="in" data-tilt><span class="tag">Content creator</span><div><h3 style="font-size:2.1rem">Steal a Lucky Block</h3><p>Videos made for the game and its community.</p></div></article></div>
-    <div class="card"><article class="in" data-tilt><span class="tag">Content creator</span><div><h3 style="font-size:2.1rem">White House Roleplay</h3><p>Videos made for the game and its community.</p></div></article></div>
+    <div class="card"><a class="in card--yt" style="display:flex;text-decoration:none;color:inherit" href="https://www.youtube.com/@SugarStab" target="_blank" rel="noopener" data-tilt><span class="tag">YouTube</span><span class="gico gico--bare"><svg viewBox="0 0 68 48" aria-hidden="true"><rect width="68" height="48" rx="13" fill="#f00"/><path d="M27 14l19 10-19 10z" fill="#fff"/></svg></span><div><span class="n" data-n="85.2" data-sfx="K" data-dec="1">85.2K</span><h3>subscribers</h3><p>71 videos. I take sponsored videos for Roblox games.</p></div></a></div>
+    <div class="card"><a class="in card--kick" style="display:flex;text-decoration:none;color:inherit" href="https://kick.com/sugarstab" target="_blank" rel="noopener" data-tilt><span class="tag">Kick</span><span class="gico gico--bare"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4l10 8 13-2 5 12 12 5-2 13 8 10-8 10 2 13-12 5-5 12-13-2-10 8-10-8-13 2-5-12-12-5 2-13-8-10 8-10-2-13 12-5 5-12 13 2z" fill="#53fc18"/><path d="M30 52l14 14 27-30" fill="none" stroke="#041f29" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><span class="n">Verified</span><h3>Streamer</h3><p>Invited into the Kick Creator Program, so verified from the first month.</p></div></a></div>
   </div></div>
 </section>
 
@@ -259,7 +303,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 
 <section class="closer" aria-labelledby="cl-title">
   <div class="wrap">
-    <h2 class="closer__t" id="cl-title"><span>Let’s</span><span>grow</span><span>your</span><span>game.</span></h2>
+    <h2 class="closer__t" id="cl-title"><span>Let’s grow</span><span>your game.</span></h2>
     <div class="ctas"><a class="pill" href="https://discord.com/users/1487390818279886960" target="_blank" rel="noopener" data-mag>Message me on Discord<i aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></i></a></div>
     <div class="reach"><a href="https://www.youtube.com/@SugarStab" target="_blank" rel="noopener">YouTube</a><a href="https://kick.com/sugarstab" target="_blank" rel="noopener">Kick</a><a href="https://www.roblox.com/users/1547481039/profile" target="_blank" rel="noopener">Roblox</a></div>
   </div>
@@ -276,15 +320,15 @@ var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){retur
 var RM=matchMedia("(prefers-reduced-motion: reduce)").matches,fine=matchMedia("(pointer: fine)").matches;
 
 /* ---------- vector avatar: crisp at any size, jointed arms so nothing clips ---------- */
-var J="url(#gj)",TAN="#e9bb92",sp="";
+var J="url(#gj)",TAN="url(#gk)",sp="";
 for(var i=0;i<13;i++){var x=142+i*9.8;sp+="M"+x+" 152L"+(x+4.9)+" 137L"+(x+9.8)+" 152"}
 function arm(k){return '<g data-r="'+k+'u"><rect x="-28" y="-12" width="56" height="74" rx="11" fill="'+J+'"/><rect x="-28" y="-12" width="8" height="74" rx="4" fill="#fff" opacity=".15"/><g data-r="'+k+'f"><circle r="28" fill="'+J+'"/><rect x="-28" y="0" width="56" height="68" rx="11" fill="'+J+'"/><rect x="-28" y="0" width="8" height="68" rx="4" fill="#fff" opacity=".15"/><rect x="-28" y="46" width="56" height="22" rx="10" fill="'+TAN+'"/><path d="M-28 47H28" stroke="#0e6e56" stroke-width="3"/></g></g>'}
 function svg(lab,watch){return '<svg class="av" viewBox="0 0 400 500" role="img" aria-label="'+lab+'"><ellipse cx="200" cy="486" rx="108" ry="11" fill="#041f29" opacity=".2"/>'+
-'<g><rect x="138" y="338" width="62" height="130" rx="8" fill="#17191e"/><rect x="200" y="338" width="62" height="130" rx="8" fill="#101216"/><rect x="138" y="338" width="8" height="130" fill="#fff" opacity=".08"/><circle cx="160" cy="412" r="7" fill="#f3d9e8"/><circle cx="160" cy="412" r="3" fill="#e9a8c8"/><circle cx="238" cy="420" r="7" fill="#f3d9e8"/><circle cx="238" cy="420" r="3" fill="#e9a8c8"/><path d="M252 350Q272 392 250 430" fill="none" stroke="#d5d9de" stroke-width="3.5" stroke-dasharray="6 3"/><rect x="132" y="456" width="72" height="26" rx="10" fill="#dadde0"/><rect x="196" y="456" width="72" height="26" rx="10" fill="#e6e8ea"/><rect x="132" y="474" width="72" height="9" rx="4" fill="#fff"/><rect x="196" y="474" width="72" height="9" rx="4" fill="#fff"/></g>'+
-'<g data-r="b"><rect x="136" y="214" width="128" height="128" rx="12" fill="'+J+'"/><rect x="176" y="214" width="48" height="128" fill="#cfe5ee"/><g fill="#eef6f9" stroke="#8fb0bd" stroke-width="1.5"><circle cx="200" cy="244" r="10"/><circle cx="200" cy="278" r="10"/><circle cx="200" cy="312" r="10"/></g><path d="M200 274c-5-6-12 0-6 6l6 6 6-6c6-6-1-12-6-6z" fill="#2fcf6b"/><path d="M176 214V342M224 214V342" stroke="#0e7a60" stroke-width="3" opacity=".6"/><rect x="146" y="262" width="24" height="26" rx="4" fill="none" stroke="#0e7a60" stroke-width="2.5"/><rect x="230" y="262" width="24" height="26" rx="4" fill="none" stroke="#0e7a60" stroke-width="2.5"/><path d="M170 214Q200 258 230 214" fill="none" stroke="#efdca3" stroke-width="4.5" stroke-dasharray="3.5 2"/></g>'+
+'<g><rect x="138" y="338" width="62" height="130" rx="8" fill="url(#gp)"/><rect x="200" y="338" width="62" height="130" rx="8" fill="url(#gp2)"/><rect x="138" y="338" width="8" height="130" fill="#fff" opacity=".08"/><circle cx="160" cy="412" r="7" fill="#f3d9e8"/><circle cx="160" cy="412" r="3" fill="#e9a8c8"/><circle cx="238" cy="420" r="7" fill="#f3d9e8"/><circle cx="238" cy="420" r="3" fill="#e9a8c8"/><path d="M252 350Q272 392 250 430" fill="none" stroke="#d5d9de" stroke-width="3.5" stroke-dasharray="6 3"/><rect x="132" y="456" width="72" height="26" rx="10" fill="#dadde0"/><rect x="196" y="456" width="72" height="26" rx="10" fill="#e6e8ea"/><rect x="132" y="474" width="72" height="9" rx="4" fill="#fff"/><rect x="196" y="474" width="72" height="9" rx="4" fill="#fff"/></g>'+
+'<g data-r="b"><rect x="136" y="214" width="128" height="128" rx="12" fill="'+J+'"/><rect x="136" y="214" width="128" height="128" rx="12" fill="url(#gs)"/><rect x="136" y="322" width="128" height="20" rx="10" fill="#04241c" opacity=".18"/><rect x="176" y="214" width="48" height="128" fill="#cfe5ee"/><g fill="#eef6f9" stroke="#8fb0bd" stroke-width="1.5"><circle cx="200" cy="244" r="10"/><circle cx="200" cy="278" r="10"/><circle cx="200" cy="312" r="10"/></g><path d="M200 274c-5-6-12 0-6 6l6 6 6-6c6-6-1-12-6-6z" fill="#2fcf6b"/><path d="M176 214V342M224 214V342" stroke="#0e7a60" stroke-width="3" opacity=".6"/><rect x="146" y="262" width="24" height="26" rx="4" fill="none" stroke="#0e7a60" stroke-width="2.5"/><rect x="230" y="262" width="24" height="26" rx="4" fill="none" stroke="#0e7a60" stroke-width="2.5"/><path d="M170 214Q200 258 230 214" fill="none" stroke="#efdca3" stroke-width="4.5" stroke-dasharray="3.5 2"/></g>'+
 '<g data-r="h"><g data-r="eL"><ellipse cx="176" cy="60" rx="15" ry="50" transform="rotate(-12 176 112)" fill="#fff" stroke="#1b1f23" stroke-width="3"/><ellipse cx="176" cy="62" rx="7" ry="36" transform="rotate(-12 176 112)" fill="#f2b6cf"/></g><g data-r="eR"><path d="M218 112C212 74 224 40 246 32C266 26 274 46 258 62C246 72 240 90 240 112Z" fill="#fff" stroke="#1b1f23" stroke-width="3"/><path d="M226 106C222 78 232 52 246 46C256 44 258 54 250 62C240 72 236 88 236 106Z" fill="#f2b6cf"/></g>'+
-'<rect x="168" y="146" width="64" height="62" rx="15" fill="#b4b8bd"/><path d="M164 146H236V176L228 166L219 182L209 168L199 184L190 169L180 183L172 168L164 178Z" fill="#eceff1"/><path d="M164 160L157 196L168 210V168Z" fill="#e4e7ea"/><path d="M236 160L243 196L232 210V168Z" fill="#e4e7ea"/><circle cx="166" cy="192" r="3.2" fill="none" stroke="#7d8389" stroke-width="1.6"/><circle cx="234" cy="192" r="3.2" fill="none" stroke="#7d8389" stroke-width="1.6"/>'+
-'<ellipse cx="200" cy="150" rx="72" ry="16" fill="#21bfa1"/><path d="M152 150L158 112Q200 100 242 112L248 150Z" fill="#2ed3b0"/><path d="'+sp+'" fill="#14171b" stroke="#14171b" stroke-width="1.5" stroke-linejoin="round"/><path d="M192 148L200 122L208 148Z" fill="#14171b"/></g>'+
+'<rect x="168" y="146" width="64" height="62" rx="15" fill="url(#gf)"/><ellipse cx="200" cy="157" rx="32" ry="13" fill="#041f29" opacity=".26"/><path d="M164 146H236V176L228 166L219 182L209 168L199 184L190 169L180 183L172 168L164 178Z" fill="#eceff1"/><path d="M164 160L157 196L168 210V168Z" fill="#e4e7ea"/><path d="M236 160L243 196L232 210V168Z" fill="#e4e7ea"/><circle cx="166" cy="192" r="3.2" fill="none" stroke="#7d8389" stroke-width="1.6"/><circle cx="234" cy="192" r="3.2" fill="none" stroke="#7d8389" stroke-width="1.6"/>'+
+'<ellipse cx="200" cy="150" rx="72" ry="16" fill="url(#gb)"/><path d="M152 150L158 112Q200 100 242 112L248 150Z" fill="url(#gh)"/><path d="'+sp+'" fill="#14171b" stroke="#14171b" stroke-width="1.5" stroke-linejoin="round"/><path d="M192 148L200 122L208 148Z" fill="#14171b"/></g>'+
 '<g data-r="L">'+arm("L")+'</g><g data-r="R">'+arm("R")+'</g>'+(watch?'':'')+'</svg>'}
 function mk(el,pose){
   var s=Object.assign({Lu:6,Lf:0,Ru:6,Rf:0,h:0,y:0,e:0},pose),q=function(k){return el.querySelector('[data-r="'+k+'"]')},n={};
@@ -302,6 +346,21 @@ var P={hero:{Lu:140,Lf:110,Ru:30,Rf:-79},think:{Lu:-20,Lf:-80,Ru:-36,Rf:-162,h:-
 var S={};
 $$("[data-av]").forEach(function(el){var k=el.dataset.av;el.innerHTML=svg(LAB[k]);S[k]=mk(el,P[k])});
 
+/* ---------- creator: game cards (add a game = add one line; u = Roblox universe ID, 0 = monogram tile) ---------- */
+var GM=[
+{n:"United States Secret Service (USSS)",gr:5856978,u:0,c:["#1d3557","#0a1626"],i:"US",big:"600K",t:"Content creator for the Roblox group."},
+{n:"Dungeon RPGs Online",gr:35757133,u:0,c:["#6d28d9","#1e0b45"],i:"DR",big:"262K",t:"Content creator for one of the biggest RPG groups on Roblox, the team behind Solo Hunters."},
+{n:"Ink Game",u:7008097940,c:["#e11d74","#4a0d2c"],i:"IG",big:"3B+",t:"3 billion visits and a peak of 810K players at once."},
+{n:"Ultimate Battlegrounds",u:4181957649,c:["#ff7a18","#7a1d00"],i:"UB"},
+{n:"Build an Ant Empire",u:10436530264,c:["#8a5a24","#2d1a08"],i:"AE"},
+{n:"Steal a Lucky Block",u:0,c:["#ffd23f","#e08a00"],i:"LB"},
+{n:"White House Roleplay",u:1641678457,c:["#2f5bd8","#0b1f5c"],i:"WH"}];
+var gh="";GM.forEach(function(g){gh+='<div class="card"><article class="in" data-tilt><span class="tag">Content creator</span><span class="gico" data-u="'+(g.u||0)+'" data-gr="'+(g.gr||0)+'" style="--c1:'+g.c[0]+';--c2:'+g.c[1]+'">'+g.i+'</span><div>'+(g.big?'<span class="n">'+g.big+'</span><h3>':'<h3 class="gt">')+g.n+'</h3><p>'+(g.t||"Videos made for the game and its community.")+'</p></div></article></div>'});
+$(".track").insertAdjacentHTML("beforeend",gh);
+var gids=GM.filter(function(g){return g.u}).map(function(g){return g.u});
+try{fetch("https://thumbnails.roproxy.com/v1/games/icons?universeIds="+gids.join(",")+"&returnPolicy=PlaceHolder&size=256x256&format=Png&isCircular=false").then(function(r){return r.json()}).then(function(d){(d.data||[]).forEach(function(x){var el=$('[data-u="'+x.targetId+'"]');if(!el||!x.imageUrl)return;var im=new Image();im.alt="";im.onload=function(){el.textContent="";el.appendChild(im)};im.src=x.imageUrl})}).catch(function(){})}catch(e){}
+try{fetch("https://thumbnails.roproxy.com/v1/groups/icons?groupIds="+GM.filter(function(g){return g.gr}).map(function(g){return g.gr}).join(",")+"&size=420x420&format=Png&isCircular=false").then(function(r){return r.json()}).then(function(d){(d.data||[]).forEach(function(x){var el=$('[data-gr="'+x.targetId+'"]');if(!el||!x.imageUrl)return;var im=new Image();im.alt="";im.onload=function(){el.textContent="";el.appendChild(im)};im.src=x.imageUrl})}).catch(function(){})}catch(e){}
+
 /* ---------- availability: IST schedule shown in Australia time ---------- */
 var AU="Australia/Sydney",IST=330,SCH={wd:[600,1290],we:[510,1350]},ORDER=[1,2,3,4,5,6,0],vtz="";
 try{vtz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
@@ -315,9 +374,9 @@ ORDER.forEach(function(d){
   var diff=(d-nowI.getUTCDay()+7)%7,base=Date.UTC(nowI.getUTCFullYear(),nowI.getUTCMonth(),nowI.getUTCDate()+diff),s=SCH[d%6?"wd":"we"],a=base+(s[0]-IST)*6e4,b=base+(s[1]-IST)*6e4,m1=mod(new Date(a),AU),m2=mod(new Date(b),AU),
   segs=m2>m1?[[m1,m2]]:[[m1,1440],[0,m2]],u=segs.map(function(g){return'<u style="left:'+g[0]/14.4+'%;width:'+(g[1]-g[0])/14.4+'%"></u>'}).join(""),
   el=document.createElement("div");el.className="drow";
-  el.innerHTML="<b>"+wf(AU).format(new Date(a))+"</b><span>"+rng(a,b,AU)+" "+abbr+"</span><div class=\"trk\">"+u+"</div>"+(vtz&&vtz!==AU?"<small class=\"loc\">Your time ("+vtz.replace(/_/g," ")+"): "+rng(a,b,vtz)+"</small>":"");
+  el.innerHTML="<b>"+wf(AU).format(new Date(a))+"</b><span>"+rng(a,b,AU)+" "+abbr+"</span><div class=\"trk\">"+u+"</div>"+"";
   days.appendChild(el)});
-$("[data-tz]").textContent="All times are Australia time ("+abbr+"), with daylight saving handled automatically."+(vtz&&vtz!==AU?" Your own time is shown underneath each day.":"");
+$("[data-tz]").textContent="All times are Australia time ("+abbr+"), with daylight saving handled automatically.";
 var clk=$("[data-clock]"),st=$("[data-status]"),stx=$("[data-stx]");$("[data-aul]").textContent="My time, Australia ("+abbr+")";
 function tick(){var t=new Date(Date.now()+IST*6e4),m=t.getUTCHours()*60+t.getUTCMinutes(),s=SCH[t.getUTCDay()%6?"wd":"we"],on=m>=s[0]&&m<s[1];
   clk.textContent=tf(AU).format(new Date());st.classList.toggle("on",on);stx.textContent=on?"Online now":"Offline right now";
@@ -333,6 +392,9 @@ $$(".row").forEach(function(r){r.querySelector("u").style.width=Math.max(4,Math.
 /* ---------- wordmark fills the width ---------- */
 function fit(){var w=$(".word"),p=w&&w.firstElementChild;if(!p)return;p.style.fontSize="100px";p.style.fontSize=(100*w.clientWidth/p.scrollWidth*.992)+"px"}
 fit();addEventListener("resize",fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+function fit2(){var t=$(".closer__t");if(!t)return;t.style.fontSize="100px";var m=Math.max.apply(0,$$("span",t).map(function(x){return x.getBoundingClientRect().width})),w=t.parentNode.clientWidth-2*parseFloat(getComputedStyle(t.parentNode).paddingLeft);t.style.fontSize=Math.min(100*w/m*.99,innerHeight*.36)+"px"}
+fit2();addEventListener("resize",fit2);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit2);
+var ld=$(".lead");if(ld)ld.innerHTML=ld.textContent.split(" ").map(function(w){return'<span class="wd">'+w+'</span>'}).join(" ");
 
 function fmt(el,v){var d=+el.dataset.dec||0;el.textContent=(d?v.toFixed(d):Math.round(v).toLocaleString("en-US"))+(el.dataset.sfx||"")}
 
@@ -371,8 +433,9 @@ document.addEventListener("DOMContentLoaded",function(){
       g.to(S.wave,{h:5+nx*14,duration:.7,ease:"power3.out",overwrite:"auto",onUpdate:S.wave.draw});
       gl(e.clientX,e.clientY)});
     var gx=g.quickTo(".glow","x",{duration:.6}),gy=g.quickTo(".glow","y",{duration:.6});function gl(x,y){gx(x);gy(y)}}
-  g.timeline({scrollTrigger:{trigger:hero,start:"top top",end:"bottom top",scrub:true}}).fromTo(".figwrap",{yPercent:0},{yPercent:-12,ease:"none"},0).fromTo(".word",{yPercent:0},{yPercent:30,ease:"none"},0).fromTo(".hero__copy",{y:0,opacity:1},{y:-40,opacity:0,ease:"none",duration:.35},0);
+  g.timeline({scrollTrigger:{trigger:hero,start:"top top",end:"bottom top",scrub:true}}).fromTo(".figwrap",{yPercent:0,scale:1},{yPercent:-48,scale:1.12,transformOrigin:"50% 100%",ease:"none"},0).fromTo(".word",{yPercent:0},{yPercent:40,ease:"none"},0).fromTo(".hero__copy",{y:0,opacity:1},{y:-40,opacity:0,ease:"none",duration:.35},0);
 
+  g.fromTo(".lead .wd",{opacity:.15},{opacity:1,stagger:.12,ease:"none",scrollTrigger:{trigger:".lead",start:"top 82%",end:"bottom 48%",scrub:true}});
   /* numbers count up (once) */
   $$(".num [data-n],.tstats [data-n],.card [data-n]").forEach(function(el){var v=+el.dataset.n,o={v:0};fmt(el,0);
     ST.create({trigger:el,start:"top 90%",once:true,onEnter:function(){g.to(o,{v:v,duration:2,ease:"power3.out",onUpdate:function(){fmt(el,o.v)}})}})});
